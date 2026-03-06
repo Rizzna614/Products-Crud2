@@ -18,6 +18,7 @@
 
     @foreach ($product as $i)
         <h2> {{ $i["id"] + 1 }}. {{ $i["name"] }} </h2>
+        <a href = "{{ route('update', $i->id) }}">Update</a> <br>
         <form action = "{{ route('delete', $i->id) }}" method = "post">
         @csrf
         @method("DELETE")
