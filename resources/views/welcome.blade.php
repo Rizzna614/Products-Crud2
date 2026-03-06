@@ -8,6 +8,7 @@
 <body>
 <h1>Welcome!</h1>
 
-<a href = "/about">About</a>
+<a href = "/about">About</a> <br>
+<a href = "/info">Info</a> <br>
 </body>
 </html>
