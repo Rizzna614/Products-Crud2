@@ -11,5 +11,6 @@
 <a href = "/about">About</a> <br>
 <a href = "/info">Info</a> <br>
 <a href = "/products">All products</a> <br>
+<a href = "/createproduct">Create new product</a> <br>
 </body>
 </html>

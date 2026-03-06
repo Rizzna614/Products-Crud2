@@ -16,3 +16,11 @@ Route::get("/info", function () {
 });
 
 Route::get("/products", [ProductController::class, "show"]);
+
+Route::get("/createproduct", function () {
+    return view("createproduct");
+});
+
+Route::post("/products", [ProductController::class, "store"]);
+
+Route::delete("/products/{id}", [ProductController::class, "delete"])->name("delete");
