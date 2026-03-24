@@ -2,7 +2,7 @@
 
 <h1>Welcome!</h1>
 
-<a href = "{{ route('about') }}">Old About</a> <br>
+<a href = "{{ route('about') }}">Ugly About</a> <br>
 <a href = "{{ route('aboutNew') }}">About</a> <br>
 <a href = "{{ route('info') }}">Info</a> <br>
 <a href = "{{ route('productsShow') }}">All products</a> <br>

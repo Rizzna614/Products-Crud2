@@ -15,4 +15,6 @@
         <input type = "submit" value="Create">
 
     </form>
+
+    <a href = "{{ route('home') }}">Home</a>
 </x-layout>
