@@ -23,10 +23,10 @@ Route::get("/createproduct", function () {
 
 Route::post("/products", [ProductController::class, "store"])->name('productsStore');
 
-Route::delete("/products/{id}", [ProductController::class, "delete"])->name("delete");
+Route::delete("/products/{id}", [ProductController::class, "delete"])->name("productsDelete");
 
-Route::get("/update/{id}", [ProductController::class, "update"])->name("update");
-Route::put("/products/{id}", [ProductController::class, "edit"])->name("upgrade");
+Route::get("/update/{id}", [ProductController::class, "update"])->name("productsUpdate");
+Route::put("/products/{id}", [ProductController::class, "edit"])->name("productsUpgrade");
 
 Route::get("/testproducts", function () {
     return view ("testproduct");
