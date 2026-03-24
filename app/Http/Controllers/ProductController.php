@@ -35,7 +35,7 @@ class ProductController extends Controller
     public function update ($id) {
         $product = Product::findorFail($id);
 
-        return view ("update", ["product" => $product]);
+        return view ("update", compact('product'));
     }
 
     public function edit ($id, Request $request) {

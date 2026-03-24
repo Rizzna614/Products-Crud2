@@ -9,7 +9,7 @@
     </ul>
 @endif
 
-    <form action = "/products" method = "post">
+    <form action = "{{ route('productsStore') }}" method = "post">
         @csrf
         Name: <input name = "name" id = "name" placeholder = "Enter product name">
         <input type = "submit" value="Create">
