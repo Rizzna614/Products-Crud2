@@ -29,7 +29,7 @@ class ProductController extends Controller
     public function delete ($id) {
         Product::destroy($id);
 
-        return "<x-layout> <h1>Sucsessfully deleted!</h1> <a href = '/'>Home</a> </x-layout>";
+        return view('deleted');
     }
 
     public function update ($id) {
@@ -43,6 +43,6 @@ class ProductController extends Controller
 
             DB::table("products")->where("id", $id)->update(["name"=>$name]);
 
-            return "<x-layout> <h1>Updated succsefully</h1> <a href = '/'>Home</a> </x-layout>";
+            return view('updated');
     }
 }
