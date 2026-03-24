@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome page</title>
-</head>
-<body>
+<x-layout>
+
 <h1>Welcome!</h1>
 
 <a href = "/about">About</a> <br>
 <a href = "/info">Info</a> <br>
 <a href = "/products">All products</a> <br>
 <a href = "/createproduct">Create new product</a> <br>
-</body>
-</html>
+<a href = "/testproducts">Test Products</a>
+
+</x-layout>
