@@ -39,6 +39,10 @@ class ProductController extends Controller
     }
 
     public function edit ($id, Request $request) {
+            $request->validate([
+            "newName" => "required",
+        ]);
+
             $name = $request->newName;
 
             DB::table("products")->where("id", $id)->update(["name"=>$name]);
