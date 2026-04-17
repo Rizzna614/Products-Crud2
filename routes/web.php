@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,3 +36,15 @@ Route::put("/products/{id}", [ProductController::class, "edit"])->name("products
 Route::get("/testproducts", function () {
     return view ("testproduct");
 })->name('productsTest');
+
+Route::get("/contact/create", function () {
+    return view ("contact.createForm");
+})->name("contactsCreate");
+
+Route::post("/contact", [ContactController::class, "store"])->name("contactsStore");
+
+Route::get("/contact", [ContactController::class, "show"])->name("showContacts");
+
+Route::get("/colors", function ($colors = ["red", "green", "blue", "yellow"]) {
+    return view("random.colors", ["colors"=>$colors]);
+})->name("colors");

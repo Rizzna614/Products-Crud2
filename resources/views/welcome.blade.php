@@ -7,6 +7,9 @@
 <a href = "{{ route('info') }}">Info</a> <br>
 <a href = "{{ route('productsShow') }}">All products</a> <br>
 <a href = "{{ route('productsCreate') }}">Create new product</a> <br>
-<a href = "{{ route('productsTest') }}">Test Products</a>
+<a href = "{{ route('productsTest') }}">Test Products</a> <br>
+<a href = "{{ route('contactsCreate') }}">New Contact</a> <br>
+<a href = "{{ route('showContacts')  }}">All Contacts</a> <br>
+<a href = "{{ route('colors') }}">Colors</a> <br>
 
 </x-layout>
