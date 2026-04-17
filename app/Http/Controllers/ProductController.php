@@ -9,8 +9,11 @@ use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function show () {
-        $product = Product::all();
+    public function show (Request $request) {
+        $limit = $request->query('limit', 100);
+
+        $product = Product::limit($limit)->get();
+
         return view ("product", compact('product'));
     }
 
