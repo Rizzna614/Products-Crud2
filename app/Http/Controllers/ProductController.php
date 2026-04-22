@@ -46,9 +46,16 @@ class ProductController extends Controller
             "newName" => "required",
         ]);
 
-            $name = $request->newName;
+            if ($request->newStatus == null) {
+                $status = Product::findOrFail($id)->status;
+            } else {
+                $status = $request->newStatus;
+            }
 
-            DB::table("products")->where("id", $id)->update(["name"=>$name]);
+            $name = $request->newName;
+            //$status = $request->newStatus;
+
+            DB::table("products")->where("id", $id)->update(["name"=>$name, "status"=>$status]);
 
             return view('updated');
     }
