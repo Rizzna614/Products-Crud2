@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
+use App\Models\Car;
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,3 +49,5 @@ Route::get("/contact", [ContactController::class, "show"])->name("showContacts")
 Route::get("/colors", function ($colors = ["red", "green", "blue", "yellow"]) {
     return view("random.colors", ["colors"=>$colors]);
 })->name("colors");
+
+Route::get("/display-car", [Car::class, "create"]);
