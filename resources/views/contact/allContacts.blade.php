@@ -11,4 +11,6 @@ foreach ($contacts as $i) {
 }
 echo "</ul>";
 ?>
+
+<a href = "{{ route('home') }}">Home</a>
 </x-layoutx>
