@@ -14,4 +14,6 @@
         Availability: <input type = "text" name = "newStatus" id = "newStatus" placeholder= "{{ $product->status }}"> <br>
         <input type = "submit" value="UPDATE">
     </form>
+
+    <!-- <a href = "{{ route('productsShow') }}">Back</a> -->
 </x-layout>
