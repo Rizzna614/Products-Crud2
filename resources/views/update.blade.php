@@ -1,4 +1,5 @@
 <x-layout>
+    <?php $options = ['available' => 'Available', 'notAvailable' => 'Not Available',]; ?>
     @if ($errors->any())
     <ul>
         @foreach ($errors->all() as $error)
@@ -11,7 +12,16 @@
         @csrf
         @method("PUT")
         New name: <input type = "text" name = "newName" id = "newName" placeholder = "{{ $product->name }}"> <br>
-        Availability: <input type = "text" name = "newStatus" id = "newStatus" placeholder= "{{ $product->status }}"> <br>
+        <!-- Availability: <input type = "text" name = "newStatus" id = "newStatus" placeholder= "{{ $product->status }}"> <br> -->
+        Availability:
+        <select id = "select" name = "select">
+            @foreach ($options as $value => $label)
+                <option value="{{ $value }}"
+                    {{ old('status', $product->status) === $value ? 'selected' : '' }}>
+                    {{ $label }}
+                </option>
+            @endforeach
+        </select>
         <input type = "submit" value="UPDATE">
     </form>
 

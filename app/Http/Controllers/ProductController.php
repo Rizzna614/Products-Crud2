@@ -43,7 +43,11 @@ class ProductController extends Controller
 
     public function edit ($id, Request $request) {
 
-            if ($request->newStatus == null && $request->newName == null) {
+            /* $request->validate([
+            "newName" => "required",
+            ]); */
+
+            /* if ($request->newStatus == null && $request->newName == null) {
             $status = Product::findOrFail($id)->status;
             $name = Product::findOrFail($id)->name;
             } else if ($request->newStatus == null) {
@@ -56,9 +60,20 @@ class ProductController extends Controller
                 } else {
                     $name = $request->newName;
                 }
+            } */
+
+            if ($request->newName == null) {
+                $name = Product::findOrFail($id)->name;
+            } else {
+                $name = $request->newName;
             }
 
-            DB::table("products")->where("id", $id)->update(["name"=>$name, "status"=>$status]);
+            $status = Product::findOrFail($id);
+            $status->status = $request->select;
+
+            $status->save();
+
+            DB::table("products")->where("id", $id)->update(["name"=>$name, /*"status"=>$status*/]);
 
             return view('updated');
     }
