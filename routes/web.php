@@ -51,3 +51,5 @@ Route::get("/colors", function ($colors = ["red", "green", "blue", "yellow"]) {
 })->name("colors");
 
 Route::get("/display-car", [Car::class, "create"]);
+
+Route::get("/products/{id}", [ProductController::class, "copyProduct"])->name("copyProduct");

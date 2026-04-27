@@ -77,4 +77,13 @@ class ProductController extends Controller
 
             return view('updated');
     }
+
+    public function copyProduct (Request $request, $id) {
+
+        $product = Product::findOrFail($id);
+
+        $productCopy = Product::create(["name" => "Copy of ". $product["name"],]);
+
+        return view("productCopy", ["product" => $productCopy]);
+    }
 }

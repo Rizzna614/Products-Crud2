@@ -13,6 +13,7 @@
         <h2> {{ $i["id"] + 1 }}. {{ $i["name"] }} </h2>
         <p>Availabiliy: {{ $i["status"]  }}</p>
         <a href = "{{ route('productsUpdate', $i->id) }}">Update</a> <br>
+        <a href = "{{ route('copyProduct', $i->id) }}">Copy</a> <br>
         <form action = "{{ route('productsDelete', $i->id) }}" method = "post">
         @csrf
         @method("DELETE")
