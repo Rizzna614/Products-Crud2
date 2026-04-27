@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\EventController;
 use App\Models\Car;
+use App\Models\Event;
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,11 +37,11 @@ Route::get("/update/{id}", [ProductController::class, "update"])->name("products
 Route::put("/products/{id}", [ProductController::class, "edit"])->name("productsUpgrade");
 
 Route::get("/testproducts", function () {
-    return view ("testproduct");
+    return view("testproduct");
 })->name('productsTest');
 
 Route::get("/contact/create", function () {
-    return view ("contact.createForm");
+    return view("contact.createForm");
 })->name("contactsCreate");
 
 Route::post("/contact", [ContactController::class, "store"])->name("contactsStore");
@@ -47,9 +49,12 @@ Route::post("/contact", [ContactController::class, "store"])->name("contactsStor
 Route::get("/contact", [ContactController::class, "show"])->name("showContacts");
 
 Route::get("/colors", function ($colors = ["red", "green", "blue", "yellow"]) {
-    return view("random.colors", ["colors"=>$colors]);
+    return view("random.colors", ["colors" => $colors]);
 })->name("colors");
 
 Route::get("/display-car", [Car::class, "create"]);
 
 Route::get("/products/{id}", [ProductController::class, "copyProduct"])->name("copyProduct");
+
+Route::get("/display-event", [EventController::class, "show"])->name("event.show");
+
