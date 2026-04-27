@@ -58,3 +58,5 @@ Route::get("/products/{id}", [ProductController::class, "copyProduct"])->name("c
 
 Route::get("/display-event", [EventController::class, "show"])->name("event.show");
 
+Route::get("/display-events", [EventController::class, "index"])->name("event.index");
+

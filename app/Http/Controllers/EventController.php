@@ -12,4 +12,17 @@ class EventController extends Controller
 
         echo "Name: " . $pasakums1->showTitle() . "; Date: " . $pasakums1->showDate() . "; Attendee count: " . $pasakums1->showAttendeeCount() . "\n";
     }
+
+    public function index () {
+        $events =
+        [
+        $pasakums2 = new Event("Burning Castle", "2027-02-22", 2500),
+        $pasakums3 = new Event("Rīgas Maratons", "2027-06-23", 4100),
+        $pasakums4 = new Event("Eating comp", "2028-01-11", 6700),
+        ];
+
+
+
+        return view("events.index", ["events" => $events]);
+    }
 }
