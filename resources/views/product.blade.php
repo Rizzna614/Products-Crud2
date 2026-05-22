@@ -10,6 +10,7 @@
     ?>
 
     @foreach ($product as $i)
+    @if ($i["deleted_at"] == null)
         <h2> {{ $i["id"] + 1 }}. {{ $i["name"] }} </h2>
         <p>Availabiliy: {{ $i["status"]  }}</p>
         <a href="{{ route('productsUpdate', $i->id) }}">Update</a> <br>
@@ -19,7 +20,9 @@
             @method("DELETE")
             <input type="submit" value="DELETE"> <br>
         </form>
+    @endif
     @endforeach
 
-    <a href="/">Home</a>
+    <a href="/">Home</a> <br>
+    <a href="{{ route('productsDeletedShow') }}">Deleted products</a> <br>
 </x-layout>
